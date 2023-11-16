@@ -8,7 +8,8 @@ We generally use this script to initiate older VMs
 
 ## How to deploy
 
-First you need to make sure that environment variables are set. To do that we need to add permanent environment variable to the server. Or you can change the variable during runtime if you want.
+1) First you need to make sure that environment variables are set. To do that we need to add permanent environment variable to the server. Or you can change the variable during runtime if you want.
+2) Add it to cron jobs for everyminute!
 
 To deploy initiation scripts we suggest you to create a folder under /etc/plusclouds and put all the files there;
 
@@ -30,3 +31,9 @@ nano /etc/environment
 LEO_API=https://api.plusclouds.com
 ```
 
+```
+crontab -e
+
+# Put this line at the end
+* * * * * bash /etc/plusclouds/ubuntu.sh
+```
