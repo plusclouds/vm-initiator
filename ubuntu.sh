@@ -1,5 +1,5 @@
 #!/bin/bash
-URL=$(printenv PLUSCLOUDS_API)
+URL=$(printenv LEO_API)
 SERIAL=$(dmidecode -s system-serial-number)
 META=$(curl -s $URL/v2/iaas/virtual-machines/meta-data?runner=bash&version=1&uuid=$SERIAL)
 
